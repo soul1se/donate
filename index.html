@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Поддержать проект</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(250, 204, 21, 0.15), transparent 35%),
+        linear-gradient(135deg, #111827, #030712);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 440px;
+      padding: 34px;
+      background: rgba(31, 41, 55, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(250, 204, 21, 0.12);
+      color: #facc15;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0;
+      color: #d1d5db;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .amount {
+      margin: 28px 0 22px;
+      font-size: 44px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .amount span {
+      font-size: 22px;
+      color: #facc15;
+    }
+
+    button {
+      width: 100%;
+      padding: 17px 22px;
+      border: none;
+      border-radius: 16px;
+      background: #facc15;
+      color: #111827;
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    button:hover {
+      background: #eab308;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .footer {
+      margin-top: 26px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="badge">Донат через ЮMoney</div>
+
+    <h1 id="donate-title">Поддержать проект</h1>
+
+    <p id="donate-description">
+      Спасибо за поддержку! Нажми кнопку ниже, чтобы отправить донат.
+    </p>
+
+    <div class="amount">
+      <span id="donate-amount">250</span> <span>₽</span>
+    </div>
+
+    <form id="donate-form" method="POST" action="https://yoomoney.ru/quickpay/confirm">
+      <input type="hidden" name="receiver" id="receiver" />
+      <input type="hidden" name="quickpay-form" value="button" />
+      <input type="hidden" name="targets" id="targets" />
+      <input type="hidden" name="sum" id="sum" />
+      <input type="hidden" name="paymentType" value="AC" />
+      <input type="hidden" name="successURL" id="successURL" />
+
+      <button id="donate-button" type="submit">Задонатить</button>
+    </form>
+
+    <div class="note">
+      Платёж обрабатывается через ЮMoney. Данные карты на этом сайте не вводятся.
+    </div>
+
+    <div class="footer">
+      Спасибо за любую поддержку ❤️
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+
+  <script>
+    document.getElementById("donate-title").textContent = DONATE_CONFIG.title;
+    document.getElementById("donate-description").textContent = DONATE_CONFIG.description;
+
+    document.getElementById("donate-amount").textContent = DONATE_CONFIG.amount;
+    document.getElementById("donate-button").textContent = `Задонатить ${DONATE_CONFIG.amount} ₽`;
+
+    document.getElementById("receiver").value = DONATE_CONFIG.wallet;
+    document.getElementById("targets").value = DONATE_CONFIG.paymentTarget;
+    document.getElementById("sum").value = DONATE_CONFIG.amount;
+    document.getElementById("successURL").value = DONATE_CONFIG.successUrl;
+  </script>
+</body>
+</html>
