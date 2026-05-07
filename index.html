@@ -67,7 +67,7 @@
       color: #ffffff;
     }
 
-    .amount span {
+    .amount .currency {
       font-size: 22px;
       color: #facc15;
     }
@@ -119,7 +119,8 @@
     </p>
 
     <div class="amount">
-      <span id="donate-amount">250</span> <span>₽</span>
+      <span id="donate-amount">350</span>
+      <span class="currency">₽</span>
     </div>
 
     <form id="donate-form" method="POST" action="https://yoomoney.ru/quickpay/confirm">
@@ -142,19 +143,33 @@
     </div>
   </main>
 
-  <script src="config.js"></script>
+  <script src="config.js?v=4"></script>
 
   <script>
-    document.getElementById("donate-title").textContent = DONATE_CONFIG.title;
-    document.getElementById("donate-description").textContent = DONATE_CONFIG.description;
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof DONATE_CONFIG === "undefined") {
+        alert("Ошибка: config.js не загружен.");
+        return;
+      }
 
-    document.getElementById("donate-amount").textContent = DONATE_CONFIG.amount;
-    document.getElementById("donate-button").textContent = `Задонатить ${DONATE_CONFIG.amount} ₽`;
+      const title = DONATE_CONFIG.title;
+      const description = DONATE_CONFIG.description;
+      const amount = DONATE_CONFIG.amount;
+      const wallet = DONATE_CONFIG.wallet;
+      const paymentTarget = DONATE_CONFIG.paymentTarget;
+      const successUrl = DONATE_CONFIG.successUrl;
 
-    document.getElementById("receiver").value = DONATE_CONFIG.wallet;
-    document.getElementById("targets").value = DONATE_CONFIG.paymentTarget;
-    document.getElementById("sum").value = DONATE_CONFIG.amount;
-    document.getElementById("successURL").value = DONATE_CONFIG.successUrl;
+      document.getElementById("donate-title").textContent = title;
+      document.getElementById("donate-description").textContent = description;
+
+      document.getElementById("donate-amount").textContent = amount;
+      document.getElementById("donate-button").textContent = `Задонатить ${amount} ₽`;
+
+      document.getElementById("receiver").value = wallet;
+      document.getElementById("targets").value = paymentTarget;
+      document.getElementById("sum").value = amount;
+      document.getElementById("successURL").value = successUrl;
+    });
   </script>
 </body>
 </html>
