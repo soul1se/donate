@@ -1,11 +1,12 @@
 const DONATE_CONFIG = {
-  wallet: "4100119528033348",
+  wallet: "410011234567890",
   amount: 350,
 
-  title: "Поддержать проект",
-  description: "Спасибо за поддержку! Нажми кнопку ниже, чтобы отправить донат.",
+  siteName: "soul1se",
+  eyebrow: "donation",
+  title: "soul1se",
+  description: "If you want to support my work, you can send a donation through ЮMoney.",
 
-  paymentTarget: "Донат проекту",
-
+  paymentTarget: "Донат soul1se",
   successUrl: "https://soul1se.github.io/donate/"
 };
