@@ -1,174 +1,192 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>soul1se — donate</title>
+  <meta name="description" content="Support soul1se through ЮMoney.">
 
-  <title>Поддержать проект</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(250, 204, 21, 0.15), transparent 35%),
-        linear-gradient(135deg, #111827, #030712);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 440px;
-      padding: 34px;
-      background: rgba(31, 41, 55, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(250, 204, 21, 0.12);
-      color: #facc15;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: 30px;
-      line-height: 1.2;
-    }
-
-    p {
-      margin: 0;
-      color: #d1d5db;
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    .amount {
-      margin: 28px 0 22px;
-      font-size: 44px;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .amount .currency {
-      font-size: 22px;
-      color: #facc15;
-    }
-
-    button {
-      width: 100%;
-      padding: 17px 22px;
-      border: none;
-      border-radius: 16px;
-      background: #facc15;
-      color: #111827;
-      font-size: 18px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    button:hover {
-      background: #eab308;
-      transform: translateY(-1px);
-    }
-
-    button:active {
-      transform: translateY(0);
-    }
-
-    .note {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #9ca3af;
-    }
-
-    .footer {
-      margin-top: 26px;
-      font-size: 12px;
-      color: #6b7280;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
-  <main class="card">
-    <div class="badge">Донат через ЮMoney</div>
+  <div class="site-bg" aria-hidden="true"></div>
 
-    <h1 id="donate-title">Поддержать проект</h1>
+  <header class="site-header container">
+    <a class="logo" href="#" id="site-name">soul1se</a>
 
-    <p id="donate-description">
-      Спасибо за поддержку! Нажми кнопку ниже, чтобы отправить донат.
-    </p>
+    <nav class="nav" aria-label="primary">
+      <a href="#donate">Donate</a>
+      <a href="#requisites">Details</a>
+      <a href="https://github.com/soul1se" target="_blank" rel="noopener">GitHub</a>
+      <a class="accent" href="https://t.me/soul1se" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </header>
 
-    <div class="amount">
-      <span id="donate-amount">350</span>
-      <span class="currency">₽</span>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <div class="hero__left">
+        <p class="eyebrow" id="eyebrow">donation</p>
 
-    <form id="donate-form" method="POST" action="https://yoomoney.ru/quickpay/confirm">
-      <input type="hidden" name="receiver" id="receiver" />
-      <input type="hidden" name="quickpay-form" value="button" />
-      <input type="hidden" name="targets" id="targets" />
-      <input type="hidden" name="sum" id="sum" />
-      <input type="hidden" name="paymentType" value="AC" />
-      <input type="hidden" name="successURL" id="successURL" />
+        <h1 class="headline" id="title">soul1se</h1>
 
-      <button id="donate-button" type="submit">Задонатить</button>
-    </form>
+        <p class="lede" id="description">
+          If you want to support my work, you can send a donation through ЮMoney.
+        </p>
 
-    <div class="note">
-      Платёж обрабатывается через ЮMoney. Данные карты на этом сайте не вводятся.
-    </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#donate">Donate now</a>
+          <a class="btn btn--ghost" href="https://t.me/soul1se" target="_blank" rel="noopener">Write</a>
+        </div>
 
-    <div class="footer">
-      Спасибо за любую поддержку ❤️
-    </div>
+        <div class="scroll-hint">
+          <span class="scroll-icon" aria-hidden="true"></span>
+          <span>Scroll</span>
+        </div>
+      </div>
+
+      <aside class="donate-card" id="donate">
+        <div class="donate-card__label">
+          <span>ЮMoney payment</span>
+          <span class="donate-card__pill">custom amount</span>
+        </div>
+
+        <p class="donate-card__text">
+          Enter any amount you want to donate. Payment will open on the ЮMoney side.
+        </p>
+
+        <noscript>
+          <p class="noscript-warning">
+            JavaScript is required for the donation form to work.
+          </p>
+        </noscript>
+
+        <form class="donate-form" method="POST" action="https://yoomoney.ru/quickpay/confirm">
+          <input type="hidden" name="receiver" id="receiver">
+          <input type="hidden" name="quickpay-form" value="button">
+          <input type="hidden" name="targets" id="targets">
+          <input type="hidden" name="paymentType" value="AC">
+          <input type="hidden" name="successURL" id="successURL">
+
+          <label class="amount-field">
+            <span>Your amount</span>
+
+            <div class="amount-input-wrap">
+              <input
+                type="number"
+                name="sum"
+                id="sum"
+                min="10"
+                max="15000"
+                step="1"
+                required
+              >
+              <small>₽</small>
+            </div>
+          </label>
+
+          <button class="btn btn--primary" id="donate-button" type="submit">
+            Donate
+          </button>
+        </form>
+
+        <p class="payment-note">
+          By clicking the button, you will be redirected to ЮMoney.
+        </p>
+      </aside>
+    </section>
+
+    <section class="requisites" id="requisites" aria-labelledby="requisites-title">
+      <div class="requisites__header">
+        <p class="eyebrow">alternative methods</p>
+
+        <h2 class="requisites__title" id="requisites-title">
+          Donation details
+        </h2>
+
+        <p class="requisites__text">
+          For any bank transfer, please include a link to your VK account in the payment comment.
+        </p>
+      </div>
+
+      <div class="requisites__grid">
+        <article class="requisite-card">
+          <span class="requisite-card__label">T-Bank</span>
+          <code class="requisite-card__value">2200 7019 2919 1689</code>
+        </article>
+
+        <article class="requisite-card">
+          <span class="requisite-card__label">Sberbank</span>
+          <code class="requisite-card__value">2202 2088 0079 7988</code>
+        </article>
+
+        <article class="requisite-card">
+          <span class="requisite-card__label">VTB</span>
+          <code class="requisite-card__value">2200 2418 7443 1806</code>
+        </article>
+
+        <article class="requisite-card">
+          <span class="requisite-card__label">ЮMoney</span>
+          <code class="requisite-card__value">2204 1201 3901 7178</code>
+        </article>
+
+        <article class="requisite-card requisite-card--wide">
+          <span class="requisite-card__label">USDT TRC-20 / TRON</span>
+
+          <code class="requisite-card__value requisite-card__value--address">
+            TMbBMm4pErAgJSfnEYaYQYuRTrq1Vi3giR
+          </code>
+
+          <p class="requisite-card__warning">
+            Send only USDT on the TRON / TRC-20 network. Transfers through other networks may be lost.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <script src="config.js?v=4"></script>
+  <footer class="footer container">
+    © <span id="year"></span> soul1se. Thank you for your support.
+  </footer>
+
+  <script src="config.js?v=2"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       if (typeof DONATE_CONFIG === "undefined") {
-        alert("Ошибка: config.js не загружен.");
+        alert("Error: config.js was not loaded.");
         return;
       }
 
-      const title = DONATE_CONFIG.title;
-      const description = DONATE_CONFIG.description;
-      const amount = DONATE_CONFIG.amount;
-      const wallet = DONATE_CONFIG.wallet;
-      const paymentTarget = DONATE_CONFIG.paymentTarget;
-      const successUrl = DONATE_CONFIG.successUrl;
+      const config = DONATE_CONFIG;
 
-      document.getElementById("donate-title").textContent = title;
-      document.getElementById("donate-description").textContent = description;
+      document.title = `${config.siteName} — donate`;
 
-      document.getElementById("donate-amount").textContent = amount;
-      document.getElementById("donate-button").textContent = `Задонатить ${amount} ₽`;
+      document.getElementById("site-name").textContent = config.siteName;
+      document.getElementById("eyebrow").textContent = config.eyebrow;
+      document.getElementById("title").textContent = config.title;
+      document.getElementById("description").textContent = config.description;
 
-      document.getElementById("receiver").value = wallet;
-      document.getElementById("targets").value = paymentTarget;
-      document.getElementById("sum").value = amount;
-      document.getElementById("successURL").value = successUrl;
+      document.getElementById("receiver").value = config.wallet;
+      document.getElementById("targets").value = config.paymentTarget;
+      document.getElementById("successURL").value = config.successUrl;
+
+      const sumInput = document.getElementById("sum");
+      const donateButton = document.getElementById("donate-button");
+
+      sumInput.value = config.amount;
+      donateButton.textContent = `Donate ${config.amount} ₽`;
+
+      sumInput.addEventListener("input", function () {
+        const amount = sumInput.value || config.amount;
+        donateButton.textContent = `Donate ${amount} ₽`;
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
     });
   </script>
 </body>
