@@ -1,5 +1,5 @@
 const DONATE_CONFIG = {
-  wallet: "410011234567890",
+  wallet: "4100119528033348",
   amount: 350,
 
   siteName: "soul1se",
